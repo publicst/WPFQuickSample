@@ -1,0 +1,72 @@
+﻿<Window x:Class="WPFQuickSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local ="clr-namespace:WPFQuickSample"
+        Title="MainWindow" Height="415" Width="534" ResizeMode="CanMinimize">
+    <Window.Resources>
+        <Style x:Key="MyListView" TargetType="{x:Type ListView}">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="10,200,10,10" />
+        </Style>
+        <local:Range x:Key="Range"/>
+    </Window.Resources>
+    <Grid>
+        <Grid>
+            <TextBox Name="TextBoxIncome" HorizontalAlignment="Left" Margin="100,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyDown="TextBoxIncome_KeyDown"/>
+            <Label Content="Income" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="RangeComboBox_Income" HorizontalAlignment="Left" VerticalAlignment="Top" Width="38" Margin="225,142,0,0" ItemsSource="{Binding Path=ItemsSource, Source={StaticResource Range}}" />
+            <Button Name="ButtonSearch" Content="Search" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="ButtonSearch_Click"/>
+            <ListView Grid.Column="0" Name="ListViewMain"  Style="{StaticResource MyListView}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Employee ID">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=EmployeeID}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Job Title">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=JobTitle}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Name">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Name}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Age">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Age}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Income">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Income}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Label Content="ID" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TextBoxID" HorizontalAlignment="Left" Margin="100,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyDown="TextBoxIncome_KeyDown"/>
+            <ComboBox x:Name="RangeComboBox_ID" HorizontalAlignment="Left" VerticalAlignment="Top" Width="38" Margin="225,10,0,0" ItemsSource="{Binding Path=ItemsSource, Source={StaticResource Range}}" />
+            <Label Content="Job Title" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TextBoxJob" HorizontalAlignment="Left" Margin="100,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyDown="TextBoxIncome_KeyDown"/>
+            <Label Content="Name" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Margin="100,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyDown="TextBoxIncome_KeyDown"/>
+            <Label Content="Age" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TextBoxAge" HorizontalAlignment="Left" Margin="100,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyDown="TextBoxIncome_KeyDown"/>
+            <ComboBox x:Name="RangeComboBox_Age" HorizontalAlignment="Left" VerticalAlignment="Top" Width="38" Margin="225,109,0,0" ItemsSource="{Binding Path=ItemsSource, Source={StaticResource Range}}" />
+        </Grid>
+    </Grid>
+</Window>

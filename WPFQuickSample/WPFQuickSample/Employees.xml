@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Employee>
+    <EmployeeID>1</EmployeeID>
+    <JobTitle>Programmer</JobTitle>
+    <Name>Alica Meaders</Name>
+    <Age>29</Age>
+    <Income>5</Income>
+  </Employee>
+  <Employee>
+    <EmployeeID>2</EmployeeID>
+    <JobTitle>Teacher</JobTitle>
+    <Name>Tayna Tesch</Name>
+    <Age>31</Age>
+    <Income>7</Income>
+  </Employee>
+  <Employee>
+    <EmployeeID>3</EmployeeID>
+    <JobTitle>Bank Caller</JobTitle>
+    <Name>Aurelio Jaynes</Name>
+    <Age>31</Age>
+    <Income>6</Income>
+  </Employee>
+  <Employee>
+    <EmployeeID>4</EmployeeID>
+    <JobTitle>Architect</JobTitle>
+    <Name>Reinaldo Nedeau</Name>
+    <Age>30</Age>
+    <Income>4</Income>
+  </Employee>
+</ArrayOfEmployee>
